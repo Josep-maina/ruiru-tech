@@ -51,30 +51,29 @@
     <main>
         <section id="hero" class="hero">
             <div class="container">
-                <div class="slider">
-                    <div class="slide">
-                        <img src="slide1.jpg" alt="RTVC Campus">
-                        <div class="slide-content">
-                            <h1>Welcome to Ruiru Technical and Vocational College</h1>
-                            <p>Competency for self reliance.</p>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <img src="slide2.jpg" alt="Students in workshop">
-                        <div class="slide-content">
-                            <h1>Hands-on Learning Experience</h1>
-                            <p>State-of-the-art facilities for practical training</p>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <img src="slide3.jpg" alt="Graduation ceremony">
-                        <div class="slide-content">
-                            <h1>Your Success is Our Priority</h1>
-                            <p>Join us on your journey to a successful career</p>
-                        </div>
-
-                    </div>
-                </div>
+							<div class="slider">
+									<div class="slide">
+											<img src="slide1.jpg" alt="RTVC Campus">
+											<div class="slide-content">
+													<h1>Welcome to Ruiru Technical and Vocational College</h1>
+													<p>Competency for self reliance.</p>
+											</div>
+									</div>
+									<div class="slide">
+											<img src="slide2.jpg" alt="Students in workshop">
+											<div class="slide-content">
+													<h1>Hands-on Learning Experience</h1>
+													<p>State-of-the-art facilities for practical training</p>
+											</div>
+									</div>
+									<div class="slide">
+											<img src="slide3.jpg" alt="Graduation ceremony">
+											<div class="slide-content">
+													<h1>Your Success is Our Priority</h1>
+													<p>Join us on your journey to a successful career</p>
+											</div>
+									</div>
+							</div>
             </div>
         </section>
 
@@ -274,21 +273,21 @@
             });
         });
 
-        // Slider functionality
-        let slideIndex = 0;
-        showSlides();
+						// Slider functionality
+						let slideIndex = 0;
+						showSlides();
 
-        function showSlides() {
-            let i;
-            let slides = document.getElementsByClassName("slide");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}
-            slides[slideIndex-1].style.display = "block";
-            setTimeout(showSlides, 5000); // Change image every 5 seconds
-        }
+						function showSlides() {
+								let i;
+								let slides = document.getElementsByClassName("slide");
+								for (i = 0; i < slides.length; i++) {
+										slides[i].style.display = "none";
+								}
+								slideIndex++;
+								if (slideIndex > slides.length) {slideIndex = 1}
+								slides[slideIndex-1].style.display = "block";
+								setTimeout(showSlides, 5000); // Change image every 5 seconds
+						}
 
         // Initialize Lucide icons
         lucide.createIcons();
