@@ -546,7 +546,7 @@ body {
 
 /* Department-specific styles */
 #department-hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('slide1.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('about-hero-bg.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -565,7 +565,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('thika1.png') repeat;
+    background: url('thika1.jpg') repeat;
     opacity: 0.1;
 }
 
