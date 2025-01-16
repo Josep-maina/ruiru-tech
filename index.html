@@ -274,27 +274,22 @@
             });
         });
 
-      // Slider functionality
-        const slider = document.querySelector('.slide-container');
-        const slides = document.querySelectorAll('.slide');
-        const prevBtn = document.querySelector('.prev');
-        const nextBtn = document.querySelector('.next');
-        let currentSlide = 0;
+        // Slider functionality
+        let slideIndex = 0;
+        showSlides();
 
-        function showSlide(n) {
-            slides[currentSlide].style.display = 'none';
-            currentSlide = (n + slides.length) % slides.length;
-            slides[currentSlide].style.display = 'block';
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 5000); // Change image every 5 seconds
         }
 
-        prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
-        nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
-
-        // Auto-advance slides
-        setInterval(() => showSlide(currentSlide + 1), 5000);
-
-        // Initial slide display
-        showSlide(0);
         // Initialize Lucide icons
         lucide.createIcons();
     </script>
