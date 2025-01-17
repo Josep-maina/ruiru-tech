@@ -765,7 +765,7 @@ body {
 
 /* Gallery Hero Section */
 #gallery-hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Slide1 - Copy.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('about-hero-bg.jpg');
     background-size: cover;
     background-position: center;
     height: 300px;
@@ -1064,7 +1064,7 @@ body {
 
 /* Contact Hero Section */
 #contact-hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Slide1 - Copy.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('about-hero-bg.jpg');
     background-size: cover;
     background-position: center;
     height: 300px;
