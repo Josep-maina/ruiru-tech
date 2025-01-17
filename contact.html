@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Ruiru Technical and Vocational College - Contact Us">
-    <title>Ruiru Technical and Vocational College | Computing and Informatics Department</title>
+    <meta name="description" content="Contact Ruiru Technical and Vocational College">
+    <title>Ruiru Technical and Vocational College | Contact Us</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style1.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">    
+		<script src="https://unpkg.com/lucide@latest"></script>
+		<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
     <header class="header">
@@ -23,18 +25,18 @@
                 <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link current">Departments</a>
+                    <a href="#" class="nav-link">Departments</a>
                     <ul class="dropdown-menu">
                         <li><a href="Electrical_and_Electronics_Engineering_Department.html">Electrical and Electronics Engineering</a></li>
                         <li><a href="Building_and_Civil_Engineering_Department.html">Building and Civil Engineering</a></li>
-                        <li><a href="Computing_and_Informatics_Department.html" class="current">Computing and Informatics</a></li>
+                        <li><a href="Computing_and_Informatics_Department.html">Computing and Informatics</a></li>
                         <li><a href="Hospitality_institutional_Management_Department.html">Hospitality And Institutional Management</a></li>
                         <li><a href="Fashion_design_And_Cosmetology_Department.html">Fashion Design And Cosmetology</a></li>
                         <li><a href="Business_Entrepreneurship_and_Liberal_studies.html">Business, Entrepreneurship and Liberal Studies</a></li>
                     </ul>
                 </li>
                 <li class="nav-item"><a href="Gallery.html" class="nav-link">Gallery</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link current">Contact Us</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -44,26 +46,67 @@
         </nav>
     </header>
 
-<section id="contact-form" class="py-3">
-	<div class="container">
-	<h1 class="l-heading"><span class="text-primary">Contact </span>Us</h1>
-			<p>Please fill out the form below to contact us.</p> 
-			<form action="process.php"></form>
-			<div class="form-group">
-				<label for="name">Name</label>
-				<input type="text" name="name" id="name">
-			</div>
-			<div class="form-group">
-				<label for="email">Email</label>
-				<input type="email" name="email" id="email">
-			</div>
-			<div class="form-group">
-				<label for="message">Message</label>
-				<textarea name="message" id="message"></textarea>
-			</div>
-			<button type="submit" class="btn">Submit</button>
-	</div>
-</section>
+    <main>
+        <section id="contact-hero" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Contact Us</h1>
+                <p class="hero-subtitle">Get in touch with Ruiru Technical and Vocational College</p>
+            </div>
+        </section>
+
+        <section id="contact-form" class="section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-form-container">
+                        <h2>Send us a message</h2>
+                        <form id="contactForm" action="https://formspree.io/f/mvggnqpq" method="POST">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+<!--                             <div class="form-group">
+                                <div class="cf-turnstile" data-sitekey="0x4AAAAAAA5ir4FNu4ab78tz"></div>
+                            </div> -->
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-secondary">Send Message</button>
+                            </div>
+                        </form>
+                        <div id="formMessage" class="form-message"></div>
+                        <p class="privacy-note">By submitting this form, you agree to our privacy policy. We will only use your information to respond to your inquiry.</p>
+                    </div>
+                    <div class="contact-info-container">
+                        <h2>Contact Information</h2>
+                        <div class="contact-info">
+                            <div class="info-item">
+                                <i data-lucide="map-pin" class="contact-icon"></i>
+                                <p>P.O. Box 416-00232 Ruiru, Kiambu County, Kenya</p>
+                            </div>
+                            <div class="info-item">
+                                <i data-lucide="phone" class="contact-icon"></i>
+                                <p>+254746319919 / +254789869499</p>
+                            </div>
+                            <div class="info-item">
+															<i data-lucide="mail" class="contact-icon"></i>
+															<p><a href="mailto:ruirutvc@gmail.com">ruirutvc@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="map-container">
+                            <h3>Our Location</h3>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.996633679051!2d36.98737669999999!3d-1.1628445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f4104bb395d15%3A0x70da85ef22b57f86!2sRuiru%20Technical%20and%20Vocational%20College!5e0!3m2!1sen!2sus!4v1737100754072!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer class="footer">
         <div class="container">
@@ -81,9 +124,10 @@
                 <div class="footer-section">
                     <h3>Connect With Us</h3>
                     <div class="social-links">
-												<a href="https://wa.me/+254746319919" class="social-link" target="_blank" rel="noopener noreferrer">
-												<i class="fab fa-whatsapp"></i>		</a>                        
-												<a href="https://www.facebook.com/p/Ruiru-Technical-And-Vocational-College-100094577041531/" target="_blank" class="social-link"><i data-lucide="facebook"></i></a>
+                        <a href="https://wa.me/+254746319919" class="social-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.facebook.com/p/Ruiru-Technical-And-Vocational-College-100094577041531/" target="_blank" class="social-link"><i data-lucide="facebook"></i></a>
                         <a href="https://twitter.com/ruirutvc" target="_blank" class="social-link"><i data-lucide="twitter"></i></a>
                         <a href="https://www.instagram.com/ruirutvc/" target="_blank" class="social-link"><i data-lucide="instagram"></i></a>
                     </div>
@@ -93,6 +137,7 @@
                     <ul>
                         <li><a href="https://portal.hef.co.ke/auth/signin">High Education Fund</a></li>
                         <li><a href="https://students.kuccps.net/login/">Kenya Universities and Colleges Central Placement Service (KUCCPS)</a></li>
+                        <li><a href="https://www.education.go.ke/">Ministry of Education</a></li>
                     </ul>
                 </div>
             </div>
@@ -103,35 +148,64 @@
         </div>
     </footer>
 
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
-        // Hamburger menu functionality
-        const hamburger = document.querySelector(".hamburger");
-        const navMenu = document.querySelector(".nav-menu");
-        const dropdowns = document.querySelectorAll(".dropdown");
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+    const dropdowns = document.querySelectorAll(".dropdown");
 
-        hamburger.addEventListener("click", () => {
-            hamburger.classList.toggle("active");
-            navMenu.classList.toggle("active");
+    hamburger.addEventListener("click", toggleMenu);
+
+    function toggleMenu() {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+    }
+
+    document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", function(e) {
+        if (!this.parentElement.classList.contains('dropdown')) {
+            closeMenu();
+        }
+    }));
+
+    function closeMenu() {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+    }
+
+    dropdowns.forEach(dropdown => {
+        const link = dropdown.querySelector(".nav-link");
+        link.addEventListener("click", function(e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                e.stopPropagation();
+                this.parentElement.classList.toggle("active");
+                
+                // Close other open dropdowns
+                dropdowns.forEach(otherDropdown => {
+                    if (otherDropdown !== this.parentElement && otherDropdown.classList.contains('active')) {
+                        otherDropdown.classList.remove('active');
+                    }
+                });
+            }
         });
+    });
 
-        document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
-            hamburger.classList.remove("active");
-            navMenu.classList.remove("active");
-        }));
-
-        dropdowns.forEach(dropdown => {
-            const link = dropdown.querySelector(".nav-link");
-            link.addEventListener("click", (e) => {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    dropdown.classList.toggle("active");
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+            dropdowns.forEach(dropdown => {
+                if (!dropdown.contains(e.target)) {
+                    dropdown.classList.remove('active');
                 }
             });
-        });
+        }
+    });
+});
 
         // Initialize Lucide icons
         lucide.createIcons();
-    </script>
+</script>
 </body>
 </html>
 
