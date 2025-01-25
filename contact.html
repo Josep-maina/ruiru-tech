@@ -9,9 +9,9 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style1.css">
     <link rel="stylesheet" href="contact.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">    
-		<script src="https://unpkg.com/lucide@latest"></script>
-		<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <header class="header">
@@ -59,7 +59,7 @@
                 <div class="contact-grid">
                     <div class="contact-form-container">
                         <h2>Send us a message</h2>
-                        <form id="contactForm" action="https://formspree.io/f/mvggnqpq" method="POST">
+                        <form id="contactForm" action="https://formspree.io/f/your_formspree_id" method="POST">
                             <div class="form-group">
                                 <label for="name">Name</label>
                                 <input type="text" id="name" name="name" required>
@@ -72,15 +72,20 @@
                                 <label for="message">Message</label>
                                 <textarea id="message" name="message" required></textarea>
                             </div>
+                            <div class="form-group honeypot">
+                                <label for="website">Website</label>
+                                <input type="text" id="website" name="website">
+                            </div>
 <!--                             <div class="form-group">
-                                <div class="cf-turnstile" data-sitekey="0x4AAAAAAA5ir4FNu4ab78tz"></div>
+                                <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
                             </div> -->
                             <div class="form-group">
-                                <button type="submit" class="btn btn-secondary">Send Message</button>
+                                <button type="submit" class="btn btn-primary">Send Message</button>
                             </div>
                         </form>
                         <div id="formMessage" class="form-message"></div>
-                        <p class="privacy-note">By submitting this form, you agree to our privacy policy. We will only use your information to respond to your inquiry.</p>
+                        <p class="privacy-note">By submitting this form, you agree to our <a href="privacy policy.html" target="_blank">privacy policy</a>. We will only use your information to respond to your inquiry.</p>
+
                     </div>
                     <div class="contact-info-container">
                         <h2>Contact Information</h2>
@@ -95,7 +100,7 @@
                             </div>
                             <div class="info-item">
 															<i data-lucide="mail" class="contact-icon"></i>
-															<p><a href="mailto:ruirutvc@gmail.com">ruirutvc@gmail.com</a></p>
+															<p><a href="mailto:ruirutvc@gmail.com"target="_blank">ruirutvc@gmail.com</a></p>
                             </div>
                         </div>
                         <div class="map-container">
@@ -116,7 +121,6 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="#departments">Departments</a></li>
                         <li><a href="Gallery.html">Gallery</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
@@ -124,14 +128,17 @@
                 <div class="footer-section">
                     <h3>Connect With Us</h3>
                     <div class="social-links">
-                        <a href="https://wa.me/+254746319919" class="social-link" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                        <a href="https://www.facebook.com/p/Ruiru-Technical-And-Vocational-College-100094577041531/" target="_blank" class="social-link"><i data-lucide="facebook"></i></a>
+												<a href="https://wa.me/+254746319919" class="social-link" target="_blank" rel="noopener noreferrer">
+												<i class="fab fa-whatsapp"></i>		</a>                        
+												<a href="mailto:ruirutvc@gmail.com" target="_blank" class="social-link">
+												<i data-lucide="mail"></i></a> 
+												<a href="https://www.facebook.com/p/Ruiru-Technical-And-Vocational-College-100094577041531/" target="_blank" class="social-link"><i data-lucide="facebook"></i></a>
                         <a href="https://twitter.com/ruirutvc" target="_blank" class="social-link"><i data-lucide="twitter"></i></a>
                         <a href="https://www.instagram.com/ruirutvc/" target="_blank" class="social-link"><i data-lucide="instagram"></i></a>
+												<a href="https://www.tiktok.com/@ruiru_tvc" target="_blank" class="social-link"><i class="fa-brands fa-tiktok"></i></a>
                     </div>
                 </div>
+                
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
@@ -202,7 +209,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
         // Initialize Lucide icons
         lucide.createIcons();
 </script>
