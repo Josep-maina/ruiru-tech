@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +8,7 @@
     <meta name="description" content="Contact Ruiru Technical and Vocational College">
     <title>Ruiru Technical and Vocational College | Contact Us</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style1.css">
-    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="style1.css"
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -59,7 +59,7 @@
                 <div class="contact-grid">
                     <div class="contact-form-container">
                         <h2>Send us a message</h2>
-                        <form id="contactForm" action="https://formspree.io/f/your_formspree_id" method="POST">
+                        <form id="contactForm">
                             <div class="form-group">
                                 <label for="name">Name</label>
                                 <input type="text" id="name" name="name" required>
@@ -83,9 +83,18 @@
                                 <button type="submit" class="btn btn-primary">Send Message</button>
                             </div>
                         </form>
-                        <div id="formMessage" class="form-message"></div>
-                        <p class="privacy-note">By submitting this form, you agree to our <a href="privacy policy.html" target="_blank">privacy policy</a>. We will only use your information to respond to your inquiry.</p>
-
+                        <!-- Inside contact-form-container div -->
+												<div class="thank-you-message">
+														<div class="checkmark"><i data-lucide="check-circle"></i></div>
+														<h3>Thank You!</h3>
+														<p>Your message has been successfully sent. We'll respond within 24 hours.</p>
+												</div>
+												<div id="formMessage" class="form-message"></div>
+                        <p class="privacy-note" style="margin-top: 1.5rem;">
+    By submitting this form, you agree to our 
+    <a href="privacy policy.html" target="_blank">privacy policy</a>. 
+    We will only use your information to respond to your inquiry.
+</p>
                     </div>
                     <div class="contact-info-container">
                         <h2>Contact Information</h2>
@@ -155,8 +164,72 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script>
+<script type="module">
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm'
+
+const supabase = createClient(
+    'https://tqttewmhaiuchxqdzdgh.supabase.co',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRxdHRld21oYWl1Y2h4cWR6ZGdoIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczODY1ODIxMywiZXhwIjoyMDU0MjM0MjEzfQ.gVkoE3HsVrL90lJyjKzW4sQYMjiy4TqjRf5DjjLNsUg'
+);
+
+document.getElementById('contactForm').addEventListener('submit', async (event) => {
+    event.preventDefault();
+    
+    const form = event.target;
+    const formData = new FormData(form);
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const messageDiv = document.getElementById('formMessage');
+    
+    try {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Sending...';
+
+        // Honeypot check
+        if (formData.get('website')) {
+            messageDiv.textContent = 'Message sent successfully!';
+            messageDiv.className = 'form-message success-message';
+            form.reset();
+            return;
+        }
+const { data, error } = await supabase
+    .from('contactform')
+    .insert([{
+        name: formData.get('name'),
+        email: formData.get('email'),
+        message: formData.get('message'),
+        website: formData.get('website') // Include honeypot field
+    }]);
+		// In your form submission handler
+const thankYouDiv = document.querySelector('.thank-you-message');
+const formContainer = document.querySelector('#contactForm');
+
+// Inside your successful submission block:
+if (error) throw error;
+
+// Hide form and show thank you message
+formContainer.style.display = 'none';
+thankYouDiv.classList.add('active');
+
+// Remove the message reset timer from finally block
+        if (error) throw error;
+
+        messageDiv.textContent = 'Message sent successfully!';
+        messageDiv.className = 'form-message success-message';
+        form.reset();
+    } catch (error) {
+        console.error('Error:', error);
+        messageDiv.textContent = 'Error sending message. Please try again.';
+        messageDiv.className = 'form-message error-message';
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Send Message';
+        setTimeout(() => {
+            messageDiv.textContent = '';
+            messageDiv.className = 'form-message';
+        }, 5000);
+    }
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector(".nav-menu");
@@ -209,8 +282,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-        // Initialize Lucide icons
-        lucide.createIcons();
+
+// Initialize Lucide icons
+lucide.createIcons();
 </script>
 </body>
 </html>
