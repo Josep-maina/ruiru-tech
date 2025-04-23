@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admissions - Ruiru Technical and Vocational College</title>
+  <link rel="stylesheet" href="style1.css"> <!-- Link to your CSS -->
+</head>
+<body>
+
+  <!-- Page Loader -->
+  <div id="page-loader">
+    <p>Loading...</p>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="navbar container">
+      <div class="nav-logo">
+        <img src="logo.png" alt="College Logo" class="logo-img">
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="admissions.html" class="nav-link current">Admissions</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+<section id="admission-hero" class="hero">
+    <div class="hero-content">
+            <h1 class="hero-title">Online Admission Form</h1>
+            <p class="hero-subtitle">Hello and welcome. This is Ruiru Technical and Vocational College online admission application form. Kindly fill all the required fields below.</p>
+    </div>
+</section>
+        
+  <!-- Admissions Form Section -->
+  <section class="section bg-light">
+    <div class="container">
+      <form action="admission.php" method="POST" class="form-card" style="max-width: 700px; margin: auto; background-color: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+        
+        <h2 style="margin-bottom: 20px; color: var(--primary-color);">Admission Details</h2>
+
+        <div class="form-group">
+          <label>Full Name <span class="required">*</span></label>
+          <input type="text" name="fullname" required class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label>Email <span class="required">*</span></label>
+          <input type="email" name="email" required class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label>ID/Maisha Number <span class="required">*</span></label>
+          <input type="text" name="id_number" required class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label>Phone Number <span class="required">*</span></label>
+          <input type="tel" name="phone" required class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label>Date of Birth <span class="required">*</span></label>
+          <input type="date" name="dob" required class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label>Gender <span class="required">*</span></label>
+          <select name="gender" required class="form-control">
+            <option value="" disabled selected>Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Nationality <span class="required">*</span></label>
+          <input type="text" name="nationality" required class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label>KCSE Mean Grade <span class="required">*</span></label>
+          <input type="text" name="kcse_grade" required class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label>Course of Interest <span class="required">*</span></label>
+          <select name="course" required class="form-control">
+            <option value="" disabled selected>Select a course</option>
+            <option value="ICT">Information Communication Technology</option>
+            <option value="Business">Business Management</option>
+            <option value="Electrical">Electrical Engineering</option>
+            <option value="Social Work">Social Work and Community Development</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Address (optional)</label>
+          <input type="text" name="address" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label>Emergency Contact (optional)</label>
+          <input type="text" name="emergency_contact" class="form-control">
+        </div>
+
+        <hr style="margin: 30px 0;">
+
+        <h3 style="color: var(--primary-color); margin-bottom: 10px;">Parent/Guardian Information</h3>
+
+        <div class="form-group">
+          <label>Parent/Guardian Name <span class="required">*</span></label>
+          <input type="text" name="guardian_name" required class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label>Parent/Guardian Phone Number <span class="required">*</span></label>
+          <input type="tel" name="guardian_phone" required class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label>Preferred Communication Method <span class="required">*</span></label>
+          <select name="communication_method" required class="form-control">
+            <option value="" disabled selected>Select a method</option>
+            <option value="Email">Email</option>
+            <option value="WhatsApp">WhatsApp</option>
+            <option value="SMS">SMS</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-submit" style="margin-top: 20px; padding: 10px 20px; background-color: var(--primary-color); color: #fff; border: none; border-radius: 5px; cursor: pointer;">Submit Application</button>
+
+      </form>
+    </div>
+  </section>
+
+  <script>
+    // Loader fadeout effect
+    window.addEventListener('load', () => {
+      document.getElementById('page-loader').classList.add('hide');
+    });
+  </script>
+
+</body>
+</html>
