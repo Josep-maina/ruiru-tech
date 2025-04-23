@@ -1436,3 +1436,135 @@ body {
 .thank-you-message p {
     color: #7f8c8d;
 }
+
+
+/* Admissions Page Form Styles */
+#admission-hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('about-hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--bg-color);
+}
+
+.form-card {
+    background-color: var(--bg-color);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.form-card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.form-card h2,
+.form-card h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.form-control {
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.2);
+}
+
+.btn-submit {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    background-color: #43a047;
+}
+
+.required {
+    color: red;
+    font-weight: bold;
+}
+
+/* Custom Style for Date Picker */
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: var(--text-color);
+    appearance: none; /* Removes default styles in some browsers */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer; /* Change cursor to pointer when hovering */
+}
+
+input[type="date"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color);
+}
+
+/* Customizing the calendar dropdown arrow */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background-color: var(--primary-color); /* Make calendar icon background match the theme */
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+}
+
+/* Hover effect on the calendar picker icon */
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    background-color: var(--secondary-color); /* Change color on hover */
+}
+
+/* Make the calendar input more responsive */
+@media (max-width: 768px) {
+    input[type="date"] {
+        padding: 12px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-card {
+        padding: 20px;
+    }
+    .form-group {
+        margin-bottom: 1rem;
+    }
+}
